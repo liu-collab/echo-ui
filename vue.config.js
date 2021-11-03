@@ -7,14 +7,14 @@ function resolve(dir) {
 module.exports = {
   pages: {
     index: {
-      entry: 'examples/main.js', // 运行入口
+      entry: 'examples/main.ts', // 运行入口
       template: 'public/index.html',
       filename: 'index.html'
     }
   },
   configureWebpack: {
     resolve: {
-      extensions: ['.js', '.vue', '.json'],
+      extensions: ['.js', '.vue', '.json', 'ts'],
       alias: {
         packages: resolve('packages'),
         assets: resolve('examples/assets'),

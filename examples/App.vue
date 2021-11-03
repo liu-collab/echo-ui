@@ -1,6 +1,7 @@
 <template>
   <div>
     <h2>echo-ui</h2>
+    <e-button>5555</e-button>
   </div>
 </template>
 
