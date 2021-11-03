@@ -18,8 +18,8 @@
     :type="nativeType"
     @click="handleClick"
   >
-    <i v-if="loading" class="d-icon-loading"></i>
-    <i v-if="icon && !loading" :class="'d-icon-' + icon"></i>
+    <i v-if="loading" class="e-icon-loading"></i>
+    <i v-if="icon && !loading" :class="'e-icon-' + icon"></i>
     <!-- v-if="$slots.default" 作用是防止span标签占位有个小距离 -->
     <span v-if="$slots.default"><slot></slot></span>
   </button>
