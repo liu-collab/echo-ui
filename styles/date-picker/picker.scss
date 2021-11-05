@@ -1,50 +1,45 @@
-@use 'sass:map';
-
-@use '../mixins/mixins' as *;
-@use '../mixins/var' as *;
-@use '../common/var' as *;
-@use '../common/transition' as *;
+@import "../mixins/mixins";
+@import "../common/var";
+@import "../common/transition";
 
 @include b(picker) {
   @include e(popper) {
     @include picker-popper(
-      var(--el-color-white),
-      1px solid var(--el-datepicker-border-color),
-      var(--el-box-shadow-light)
+      $--color-white,
+      1px solid $--datepicker-border-color,
+      $--box-shadow-light,
     );
   }
 }
 
 @include b(date-editor) {
-  @include set-component-css-var('date-editor', $date-editor);
-
   position: relative;
   display: inline-block;
   text-align: left;
 
   &.#{$namespace}-input,
   &.#{$namespace}-input__inner {
-    width: var(--el-date-editor-width);
+    width: 220px;
   }
 
   @include m((monthrange)) {
     &.#{$namespace}-input,
     &.#{$namespace}-input__inner {
-      width: var(--el-date-editor-monthrange-width);
+      width: 300px;
     }
   }
 
   @include m((daterange, timerange)) {
     &.#{$namespace}-input,
     &.#{$namespace}-input__inner {
-      width: var(--el-date-editor-daterange-width);
+      width: 350px;
     }
   }
 
   @include m(datetimerange) {
     &.#{$namespace}-input,
     &.#{$namespace}-input__inner {
-      width: var(--el-date-editor-datetimerange-width);
+      width: 400px;
     }
   }
 
@@ -55,28 +50,16 @@
     }
   }
 
-  .close-icon {
+  .#{$namespace}-icon-circle-close {
     cursor: pointer;
-  }
-
-  .clear-icon {
-    cursor: pointer;
-
-    &:hover {
-      color: var(--el-text-color-secondary);
-    }
   }
 
   .#{$namespace}-range__icon {
-    height: inherit;
     font-size: 14px;
     margin-left: -5px;
-    color: var(--el-text-color-placeholder);
+    color: $--color-text-placeholder;
     float: left;
-
-    svg {
-      vertical-align: middle;
-    }
+    line-height: 32px;
   }
 
   .#{$namespace}-range-input {
@@ -89,16 +72,15 @@
     padding: 0;
     width: 39%;
     text-align: center;
-    font-size: var(--el-font-size-base);
-    color: var(--el-text-color-regular);
+    font-size: $--font-size-base;
+    color: $--color-text-regular;
 
     &::placeholder {
-      color: var(--el-text-color-placeholder);
+      color: $--color-text-placeholder;
     }
   }
 
   .#{$namespace}-range-separator {
-    flex: 1;
     display: inline-block;
     height: 100%;
     padding: 0 5px;
@@ -106,30 +88,17 @@
     text-align: center;
     line-height: 32px;
     font-size: 14px;
-    word-break: keep-all;
-    color: var(--el-text-color-primary);
+    width: 5%;
+    color: $--color-text-primary;
   }
 
   .#{$namespace}-range__close-icon {
     font-size: 14px;
-    color: var(--el-text-color-placeholder);
-    height: inherit;
-    width: unset;
+    color: $--color-text-placeholder;
+    width: 25px;
     display: inline-block;
-    cursor: pointer;
-
-    &:hover {
-      color: var(--el-text-color-secondary);
-    }
-
-    svg {
-      vertical-align: middle;
-    }
-
-    &--hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
+    float: right;
+    line-height: 32px;
   }
 }
 
@@ -145,54 +114,100 @@
   }
 
   @include when(active) {
-    border-color: var(--el-color-primary);
+    border-color: $--color-primary;
 
     &:hover {
-      border-color: var(--el-color-primary);
+      border-color: $--color-primary;
     }
   }
 
-  @each $size in (medium, small, mini) {
-    @include m($size) {
-      line-height: map.get($input-height, $size);
+  @include m(medium) {
+    line-height: $--input-medium-height;
 
-      &.#{$namespace}-input__inner {
-        height: map.get($input-height, $size);
-      }
+    &.#{$namespace}-input__inner {
+      height: $--input-medium-height;
+    }
 
-      .#{$namespace}-range-separator {
-        line-height: map.get($input-line-height, $size);
-        font-size: map.get($input-font-size, $size);
-      }
+    .#{$namespace}-range-separator {
+      line-height: 28px;
+      font-size: $--input-medium-font-size;
+    }
 
-      .#{$namespace}-range-input {
-        font-size: map.get($input-font-size, $size);
-      }
+    .#{$namespace}-range-input {
+      font-size: $--input-medium-font-size;
+    }
+
+    .#{$namespace}-range__icon,
+    .#{$namespace}-range__close-icon {
+      line-height: 28px;
+    }
+  }
+
+  @include m(small) {
+    line-height: $--input-small-height;
+
+    &.#{$namespace}-input__inner {
+      height: $--input-small-height;
+    }
+
+    .#{$namespace}-range-separator {
+      line-height: 24px;
+      font-size: $--input-small-font-size;
+    }
+
+    .#{$namespace}-range-input {
+      font-size: $--input-small-font-size;
+    }
+
+    .#{$namespace}-range__icon,
+    .#{$namespace}-range__close-icon {
+      line-height: 24px;
+    }
+  }
+
+  @include m(mini) {
+    line-height: $--input-mini-height;
+
+    &.#{$namespace}-input__inner {
+      height: $--input-mini-height;
+    }
+
+    .#{$namespace}-range-separator {
+      line-height: 20px;
+      font-size: $--input-mini-font-size;
+    }
+
+    .#{$namespace}-range-input {
+      font-size: $--input-mini-font-size;
+    }
+
+    .#{$namespace}-range__icon,
+    .#{$namespace}-range__close-icon {
+      line-height: 20px;
     }
   }
 
   @include when(disabled) {
-    background-color: map.get($input-disabled, 'fill');
-    border-color: map.get($input-disabled, 'border');
-    color: map.get($input-disabled, 'color');
+    background-color: $--input-disabled-fill;
+    border-color: $--input-disabled-border;
+    color: $--input-disabled-color;
     cursor: not-allowed;
 
-    &:hover,
-    &:focus {
-      border-color: map.get($input-disabled, 'border');
+    &:hover, &:focus {
+      border-color: $--input-disabled-border;
     }
 
     input {
-      background-color: map.get($input-disabled, 'fill');
-      color: map.get($input-disabled, 'color');
+      background-color: $--input-disabled-fill;
+      color: $--input-disabled-color;
       cursor: not-allowed;
       &::placeholder {
-        color: map.get($input-disabled, 'placeholder-color');
+        color: $--input-disabled-placeholder-color;
       }
     }
 
     .#{$namespace}-range-separator {
-      color: map.get($input-disabled, 'color');
+      color: $--input-disabled-color;
     }
   }
 }

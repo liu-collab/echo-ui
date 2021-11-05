@@ -1,5 +1,5 @@
-@use 'mixins/mixins' as *;
-@use 'common/var' as *;
+@import "mixins/mixins";
+@import "common/var";
 
 @include b(popconfirm) {
   @include e(main) {
@@ -10,7 +10,7 @@
     margin-right: 5px;
   }
   @include e(action) {
-    text-align: right;
-    margin-top: 8px;
+    text-align: right; 
+    margin: 0
   }
 }

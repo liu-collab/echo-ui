@@ -1,16 +1,17 @@
-@use 'mixins/mixins' as *;
-@use 'common/var' as *;
+@import "mixins/mixins";
+@import "common/var";
 
 @mixin op-icon() {
   width: 44px;
   height: 44px;
   font-size: 24px;
   color: #fff;
-  background-color: var(--el-text-color-regular);
+  background-color: $--color-text-regular;
   border-color: #fff;
 }
 
 @include b(image-viewer) {
+
   @include e(wrapper) {
     position: fixed;
     top: 0;
@@ -26,15 +27,10 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    opacity: 0.8;
+    opacity: .8;
     cursor: pointer;
     box-sizing: border-box;
     user-select: none;
-
-    .#{$namespace}-icon {
-      font-size: inherit;
-      cursor: pointer;
-    }
   }
 
   @include e(close) {
@@ -60,7 +56,7 @@
     width: 282px;
     height: 44px;
     padding: 0 23px;
-    background-color: var(--el-text-color-regular);
+    background-color: $--color-text-regular;
     border-color: #fff;
     border-radius: 22px;
 
@@ -77,14 +73,14 @@
     }
   }
 
-  @include e(prev) {
+  @include e(prev){
     top: 50%;
     transform: translateY(-50%);
     left: 40px;
-    @include op-icon();
+    @include op-icon()
   }
 
-  @include e(next) {
+  @include e(next){
     top: 50%;
     transform: translateY(-50%);
     right: 40px;
@@ -102,17 +98,17 @@
     height: 100%;
     top: 0;
     left: 0;
-    opacity: 0.5;
+    opacity: .5;
     background: #000;
   }
 }
 
 .viewer-fade-enter-active {
-  animation: viewer-fade-in var(--el-transition-duration);
+  animation: viewer-fade-in .3s;
 }
 
 .viewer-fade-leave-active {
-  animation: viewer-fade-out var(--el-transition-duration);
+  animation: viewer-fade-out .3s;
 }
 
 @keyframes viewer-fade-in {

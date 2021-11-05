@@ -1,5 +1,5 @@
-@use 'mixins/mixins' as *;
-@use 'common/var' as *;
+@import "mixins/mixins";
+@import "common/var";
 
 @include b(space) {
   display: inline-flex;

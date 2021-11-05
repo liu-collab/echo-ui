@@ -1,5 +1,5 @@
-@use 'mixins/mixins' as *;
-@use 'common/var' as *;
+@import "mixins/mixins";
+@import "common/var";
 
 @include b(page-header) {
   display: flex;
@@ -12,25 +12,20 @@
     position: relative;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       width: 1px;
       height: 16px;
       right: -20px;
       top: 50%;
       transform: translateY(-50%);
-      background-color: var(--el-border-color-base);
+      background-color: $--border-color-base;
     }
 
-    @include e(icon) {
+    .#{$namespace}-icon-back {
       font-size: 18px;
       margin-right: 6px;
-      display: flex;
-      align-items: center;
-
-      .el-icon {
-        font-size: inherit;
-      }
+      align-self: center;
     }
 
     @include e(title) {
@@ -41,6 +36,6 @@
 
   @include e(content) {
     font-size: 18px;
-    color: var(--el-text-color-primary);
+    color: $--color-text-primary;
   }
 }

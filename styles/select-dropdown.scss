@@ -1,57 +1,54 @@
-@use 'sass:map';
-
-@use 'mixins/mixins' as *;
-@use 'common/var' as *;
+@import "mixins/mixins";
+@import "common/var";
+@import "./popper";
 
 @include b(select-dropdown) {
-  z-index: calc(var(--el-index-top) + 1);
-  border-radius: var(--el-border-radius-base);
+  z-index: #{$--index-top + 1};
+  border-radius: $--border-radius-base;
   box-sizing: border-box;
 
   @include when(multiple) {
     & .#{$namespace}-select-dropdown__item.selected {
-      color: map.get($select-option, 'selected-font-color');
-      background-color: map.get($select-dropdown, 'background');
+      color: $--select-option-selected-font-color;
+      background-color: $--select-dropdown-background;
 
       &.hover {
-        background-color: map.get($select-option, 'hover-background');
+        background-color: $--select-option-hover-background;
       }
 
-      & .el-icon {
+      &::after {
         position: absolute;
         right: 20px;
-        top: 0;
-        height: inherit;
+        font-family: 'element-icons';
+        content: "\e6da";
         font-size: 12px;
-
-        svg {
-          height: inherit;
-          vertical-align: middle;
-        }
+        font-weight: bold;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
     }
   }
 
-  .#{$namespace}-scrollbar.is-empty .#{$namespace}-select-dropdown__list {
+  .#{$namespace}-scrollbar.is-empty .#{$namespace}-select-dropdown__list{
     padding: 0;
   }
 }
 
 @include b(select-dropdown__empty) {
-  padding: map.get($select-dropdown, 'empty-padding');
+  padding: $--select-dropdown-empty-padding;
   margin: 0;
   text-align: center;
-  color: map.get($select-dropdown, 'empty-color');
-  font-size: var(--el-select-font-size);
+  color: $--select-dropdown-empty-color;
+  font-size: $--select-font-size;
 }
 
 @include b(select-dropdown__wrap) {
-  max-height: map.get($select-dropdown, 'max-height');
+  max-height: $--select-dropdown-max-height;
 }
 
 @include b(select-dropdown__list) {
   list-style: none;
-  padding: map.get($select-dropdown, 'padding');
+  padding: $--select-dropdown-padding;
   margin: 0;
   box-sizing: border-box;
 }

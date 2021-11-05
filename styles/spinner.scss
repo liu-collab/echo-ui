@@ -1,4 +1,4 @@
-@use 'mixins/mixins' as *;
+@import "mixins/mixins";
 
 @include b(time-spinner) {
   width: 100%;
@@ -19,6 +19,7 @@
     stroke-linecap: round;
     animation: dash 1.5s ease-in-out infinite;
   }
+
 }
 
 @keyframes rotate {

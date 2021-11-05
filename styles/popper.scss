@@ -1,14 +1,9 @@
-@use 'mixins/mixins' as *;
-@use 'mixins/var' as *;
-@use 'common/var' as *;
-
-@include b(popper) {
-  @include set-component-css-var('popper', $popper);
-}
+@import 'mixins/mixins';
+@import 'common/var';
 
 @include b(popper) {
   position: absolute;
-  border-radius: var(--el-popper-border-radius);
+  border-radius: 4px;
   padding: 10px;
   z-index: 2000;
   font-size: 12px;
@@ -20,21 +15,21 @@
   $arrow-selector: #{& + '__arrow'};
 
   @include when(dark) {
-    color: var(--el-color-white);
-    background: var(--el-text-color-primary);
+    color: $--color-white;
+    background: $--color-text-primary;
     #{$arrow-selector}::before {
-      background: var(--el-text-color-primary);
+      background: $--color-text-primary;
       right: 0;
     }
   }
 
   @include when(light) {
-    background: var(--el-color-white);
-    border: 1px solid var(--el-border-color-light);
+    background: $--color-white;
+    border: 1px solid $--border-color-light;
 
     #{$arrow-selector}::before {
-      border: 1px solid var(--el-border-color-light);
-      background: var(--el-color-white);
+      border: 1px solid $--border-color-light;
+      background: $--color-white;
       right: 0;
     }
   }
@@ -56,7 +51,7 @@
       z-index: -1;
       content: ' ';
       transform: rotate(45deg);
-      background: var(--el-text-color-primary);
+      background: $--color-text-primary;
       box-sizing: border-box;
     }
   }

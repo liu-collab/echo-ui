@@ -1,6 +1,6 @@
-@use 'mixins/mixins' as *;
-@use 'mixins/utils' as *;
-@use 'common/var' as *;
+@import "mixins/mixins";
+@import "mixins/utils";
+@import "common/var";
 
 @include b(progress) {
   position: relative;
@@ -10,7 +10,7 @@
 
   @include e(text) {
     font-size: 14px;
-    color: var(--el-text-color-regular);
+    color: $--color-text-regular;
     margin-left: 5px;
     min-width: 50px;
     line-height: 1;
@@ -40,6 +40,7 @@
     }
   }
 
+
   @include m(without-text) {
     .#{$namespace}-progress__text {
       display: none;
@@ -61,31 +62,31 @@
 
   @include when(success) {
     .#{$namespace}-progress-bar__inner {
-      background-color: var(--el-color-success);
+      background-color: $--color-success;
     }
 
     .#{$namespace}-progress__text {
-      color: var(--el-color-success);
+      color: $--color-success;
     }
   }
 
   @include when(warning) {
     .#{$namespace}-progress-bar__inner {
-      background-color: var(--el-color-warning);
+      background-color: $--color-warning;
     }
 
     .#{$namespace}-progress__text {
-      color: var(--el-color-warning);
+      color: $--color-warning;
     }
   }
 
   @include when(exception) {
     .#{$namespace}-progress-bar__inner {
-      background-color: var(--el-color-danger);
+      background-color: $--color-danger;
     }
 
     .#{$namespace}-progress__text {
-      color: var(--el-color-danger);
+      color: $--color-danger;
     }
   }
 }
@@ -97,7 +98,7 @@
   @include e(outer) {
     height: 6px;
     border-radius: 100px;
-    background-color: var(--el-border-color-lighter);
+    background-color: $--border-color-lighter;
     overflow: hidden;
     position: relative;
     vertical-align: middle;
@@ -107,7 +108,7 @@
     left: 0;
     top: 0;
     height: 100%;
-    background-color: var(--el-color-primary);
+    background-color: $--color-primary;
     text-align: right;
     border-radius: 100px;
     line-height: 1;
@@ -115,17 +116,12 @@
     transition: width 0.6s ease;
 
     @include utils-vertical-center;
-
-    @include m(indeterminate) {
-      transform: translateZ(0);
-      animation: indeterminate 3s infinite;
-    }
   }
 
   @include e(innerText) {
     display: inline-block;
     vertical-align: middle;
-    color: $color-white;
+    color: $--color-white;
     font-size: 12px;
     margin: 0 5px;
   }
@@ -138,15 +134,5 @@
 
   100% {
     background-position: 32px 0;
-  }
-}
-
-@keyframes indeterminate {
-  0% {
-    left: -100%;
-  }
-
-  100% {
-    left: 100%;
   }
 }

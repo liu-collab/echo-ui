@@ -1,12 +1,5 @@
-@use 'sass:map';
-
-@use 'mixins/mixins' as *;
-@use 'mixins/var' as *;
-@use 'common/var' as *;
-
-@include b(scrollbar) {
-  @include set-component-css-var('scrollbar', $scrollbar);
-}
+@import "mixins/mixins";
+@import "common/var";
 
 @include b(scrollbar) {
   overflow: hidden;
@@ -32,22 +25,11 @@
     height: 0;
     cursor: pointer;
     border-radius: inherit;
-    background-color: var(
-      --el-scrollbar-background-color,
-      map.get($scrollbar, 'background-color')
-    );
-    transition: var(--el-transition-duration) background-color;
-    opacity: var(--el-scrollbar-opacity, map.get($scrollbar, 'opacity'));
+    background-color: $--scrollbar-background-color;
+    transition: .3s background-color;
 
     &:hover {
-      background-color: var(
-        --el-scrollbar-hover-background-color,
-        map.get($scrollbar, 'hover-background-color')
-      );
-      opacity: var(
-        --el-scrollbar-hover-opacity,
-        map.get($scrollbar, 'hover-opacity')
-      );
+      background-color: $--scrollbar-hover-background-color;
     }
   }
 
@@ -78,17 +60,15 @@
   }
 }
 
-.#{$namespace}-scrollbar-fade {
-  &-enter-active {
-    transition: opacity 340ms ease-out;
-  }
+.#{$namespace}-scrollbar-fade-enter-active {
+  transition: opacity 340ms ease-out;
+}
 
-  &-leave-active {
-    transition: opacity 120ms ease-out;
-  }
+.#{$namespace}-scrollbar-fade-leave-active {
+  transition: opacity 120ms ease-out;
+}
 
-  &-enter-from,
-  &-leave-active {
-    opacity: 0;
-  }
+.#{$namespace}-scrollbar-fade-enter-from,
+.#{$namespace}-scrollbar-fade-leave-active {
+  opacity: 0;
 }

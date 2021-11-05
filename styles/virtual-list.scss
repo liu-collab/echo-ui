@@ -1,14 +1,27 @@
-@use 'mixins/mixins' as *;
-@use 'common/var' as *;
+@import "mixins/mixins";
+@import "common/var";
 
 @include b(vl) {
-  @include e(wrapper) {
+  @include e(viewport) {
+    overflow: auto;
+  }
+
+  @include e(content) {
+    overflow: hidden;
+    will-change: transform;
     position: relative;
   }
-}
 
-@include b(vg) {
-  @include e(wrapper) {
-    position: relative;
+  @include e(item-container) {
+    will-change: transform; 
+    display: flex;
+
+    &[data-direction="v"] {
+      flex-direction: column;
+    }
+
+    &[data-direction="h"] {
+      flex-direction: row;
+    }
   }
 }

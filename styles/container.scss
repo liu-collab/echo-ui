@@ -1,4 +1,4 @@
-@use 'mixins/mixins' as *;
+@import "mixins/mixins";
 
 @include b(container) {
   display: flex;

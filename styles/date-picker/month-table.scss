@@ -1,5 +1,4 @@
-@use '../mixins/mixins' as *;
-@use '../common/var' as *;
+@import "../common/var";
 
 @include b(month-table) {
   font-size: 12px;
@@ -17,22 +16,22 @@
     }
     &.today {
       .cell {
-        color: var(--el-color-primary);
+        color: $--color-primary;
         font-weight: bold;
       }
       &.start-date .cell,
       &.end-date .cell {
-        color: $color-white;
+        color: $--color-white;
       }
     }
 
     &.disabled .cell {
-      background-color: $background-color-base;
+      background-color: $--background-color-base;
       cursor: not-allowed;
-      color: var(--el-text-color-placeholder);
+      color: $--color-text-placeholder;
 
       &:hover {
-        color: var(--el-text-color-placeholder);
+        color: $--color-text-placeholder;
       }
     }
 
@@ -41,29 +40,29 @@
       height: 36px;
       display: block;
       line-height: 36px;
-      color: var(--el-datepicker-font-color);
+      color: $--datepicker-font-color;
       margin: 0 auto;
       border-radius: 18px;
       &:hover {
-        color: var(--el-datepicker-hover-font-color);
+        color: $--datepicker-hover-font-color;
       }
     }
 
     &.in-range div {
-      background-color: var(--el-datepicker-inrange-background-color);
+      background-color: $--datepicker-inrange-background-color;
       &:hover {
-        background-color: var(--el-datepicker-inrange-hover-background-color);
+        background-color: $--datepicker-inrange-hover-background-color;
       }
     }
     &.start-date div,
     &.end-date div {
-      color: $color-white;
+      color: $--color-white;
     }
 
     &.start-date .cell,
     &.end-date .cell {
-      color: $color-white;
-      background-color: var(--el-datepicker-active-color);
+      color: $--color-white;
+      background-color: $--datepicker-active-color;
     }
 
     &.start-date div {
@@ -77,7 +76,7 @@
     }
 
     &.current:not(.disabled) .cell {
-      color: var(--el-datepicker-active-color);
+      color: $--datepicker-active-color;
     }
   }
 }

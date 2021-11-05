@@ -1,17 +1,16 @@
-@use 'mixins/mixins' as *;
-@use 'mixins/var' as *;
-@use 'common/var' as *;
+@import "mixins/mixins";
+@import "common/var";
+@import "button";
+@import "button-group";
 
 @include b(calendar) {
-  @include set-component-css-var('calendar', $calendar);
-
-  background-color: #fff;
+  background-color:#fff;
 
   @include e(header) {
     display: flex;
     justify-content: space-between;
     padding: 12px 20px;
-    border-bottom: var(--el-calendar-header-border-bottom);
+    border-bottom: $--table-border;
   }
 
   @include e(title) {
@@ -30,38 +29,38 @@
 
   thead th {
     padding: 12px 0;
-    color: var(--el-text-color-regular);
+    color: $--color-text-regular;
     font-weight: normal;
   }
 
   &:not(.is-range) {
     td.prev,
     td.next {
-      color: var(--el-text-color-placeholder);
+      color: $--color-text-placeholder;
     }
   }
 
   td {
-    border-bottom: var(--el-calendar-border);
-    border-right: var(--el-calendar-border);
+    border-bottom: $--calendar-border;
+    border-right: $--calendar-border;
     vertical-align: top;
-    transition: background-color var(--el-transition-duration-fast) ease;
+    transition: background-color 0.2s ease;
 
     @include when(selected) {
-      background-color: var(--el-calendar-selected-background-color);
+      background-color: $--calendar-selected-background-color;
     }
 
     @include when(today) {
-      color: var(--el-color-primary);
+      color: $--color-primary;
     }
   }
 
   tr:first-child td {
-    border-top: var(--el-calendar-border);
+    border-top: $--calendar-border;
   }
 
   tr td:first-child {
-    border-left: var(--el-calendar-border);
+    border-left: $--calendar-border;
   }
 
   tr.#{$namespace}-calendar-table__row--hide-border td {
@@ -71,10 +70,10 @@
   @include b(calendar-day) {
     box-sizing: border-box;
     padding: 8px;
-    height: var(--el-calendar-cell-width);
+    height: $--calendar-cell-width;
     &:hover {
       cursor: pointer;
-      background-color: var(--el-calendar-selected-background-color);
+      background-color: $--calendar-selected-background-color;
     }
   }
 }

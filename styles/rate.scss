@@ -1,19 +1,11 @@
-@use 'sass:map';
-
-@use 'mixins/mixins' as *;
-@use 'mixins/var' as *;
-@use 'common/var' as *;
+@import "mixins/mixins";
+@import "common/var";
 
 @include b(rate) {
-  @include set-component-css-var('rate', $rate);
-}
-
-@include b(rate) {
-  height: var(--el-rate-height);
+  height: $--rate-height;
   line-height: 1;
 
-  &:focus,
-  &:active {
+  &:focus, &:active {
     outline-width: 0;
   }
 
@@ -27,10 +19,10 @@
   @include e(icon) {
     position: relative;
     display: inline-block;
-    font-size: var(--el-rate-icon-size);
-    margin-right: var(--el-rate-icon-margin);
-    color: var(--el-rate-icon-color);
-    transition: var(--el-transition-duration);
+    font-size: $--rate-icon-size;
+    margin-right: $--rate-icon-margin;
+    color: $--rate-icon-color;
+    transition: .3s;
     &.hover {
       transform: scale(1.15);
     }
@@ -51,7 +43,7 @@
   }
 
   @include e(text) {
-    font-size: var(--el-rate-font-size);
+    font-size: $--rate-font-size;
     vertical-align: middle;
   }
 }
