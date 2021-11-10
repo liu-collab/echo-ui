@@ -14,11 +14,9 @@ module.exports = {
   },
   configureWebpack: {
     resolve: {
-      extensions: ['.js', '.vue', '.json', 'ts'],
+      extensions: ['.js', '.vue', '.json', '.ts'],
       alias: {
-        packages: resolve('packages'),
-        assets: resolve('examples/assets'),
-        views: resolve('examples/views')
+        packages: resolve('packages')
       }
     }
   },
