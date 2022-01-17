@@ -1,8 +1,8 @@
-import { DayUIComponent } from './component'
+import { EchoUIComponent } from './component'
 
 export const DIcon: IIcon
 /** Icon Component */
-interface IIcon extends DayUIComponent {
+interface IIcon extends EchoUIComponent {
   /** Icon name */
   name: string
 }

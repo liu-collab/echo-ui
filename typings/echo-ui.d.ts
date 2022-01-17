@@ -1,12 +1,12 @@
 import { App } from 'vue'
 import {
-  DayUIComponent,
-  DayUIComponentSize,
-  DayUIHorizontalAlignment
+  EchoUIComponent,
+  EchoUIComponentSize,
+  EchoUIHorizontalAlignment
 } from './component'
 
-export { DButton } from './button'
-export { DButtonGroup } from './button-group'
+export { EButton } from './button'
+export { EButtonGroup } from './button-group'
 export { DIcon } from './icon'
 export { DAffix } from './affix'
 
@@ -18,13 +18,13 @@ export interface InstallationOptions {
 
 export function install(app: App, ...options: any[]): any
 
-export type Component = DayUIComponent
+export type Component = EchoUIComponent
 
 /** Component size definition for button, input, etc */
-export type ComponentSize = DayUIComponentSize
+export type ComponentSize = EchoUIComponentSize
 
 /** Horizontal alignment */
-export type HorizontalAlignment = DayUIHorizontalAlignment
+export type HorizontalAlignment = EchoUIHorizontalAlignment
 
 export type GlobalOptions = {
   size?: number | string

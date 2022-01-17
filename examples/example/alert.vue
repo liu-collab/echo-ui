@@ -1,7 +1,6 @@
 <template>
   <div>
-     <e-button round  type="primary" loading >5555</e-button>
-     <e-button type="danger"><e-icon  name="share"></e-icon>222</e-button>
+    <e-alert>dscd</e-alert>
   </div>
 </template>
 

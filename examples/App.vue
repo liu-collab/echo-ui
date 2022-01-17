@@ -3,6 +3,7 @@
     <h2>echo-ui</h2>
     <Ebutton></Ebutton>
     <EIcon></EIcon>
+    <EAlert></EAlert>
   </div>
 </template>
 
@@ -10,10 +11,12 @@
 import { defineComponent } from 'vue'
 import Ebutton from './example/button.vue'
 import  EIcon  from './example/icon.vue'
+import EAlert from './example/alert.vue'
 export default defineComponent({
   components:{
     Ebutton,
-    EIcon
+    EIcon,
+    EAlert
   },
   setup () {
 

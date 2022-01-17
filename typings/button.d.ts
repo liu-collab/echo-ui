@@ -1,4 +1,4 @@
-import { DayUIComponent, DayUIComponentSize } from './component'
+import { EchoUIComponent, EchoUIComponentSize } from './component'
 
 /** Button type */
 export type ButtonType =
@@ -13,9 +13,9 @@ export type ButtonType =
 /** Same as native button's type */
 export type ButtonNativeType = 'button' | 'submit' | 'reset'
 
-interface IButton extends DayUIComponent {
+interface IButton extends EchoUIComponent {
   /** Button size */
-  size: DayUIComponentSize
+  size: EchoUIComponentSize
 
   /** Button type */
   type: ButtonType
@@ -43,4 +43,4 @@ interface IButton extends DayUIComponent {
 }
 
 /** Button Component */
-export const DButton: IButton
+export const EButton: IButton

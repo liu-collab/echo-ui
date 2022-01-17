@@ -1,6 +1,6 @@
-import { DayUIComponent } from './component'
+import { EchoUIComponent } from './component'
 
-interface IButtonGroup extends DayUIComponent {}
+interface IButtonGroup extends EchoUIComponent {}
 
 /** Button Group Component */
-export const DButtonGroup: IButtonGroup
+export const EButtonGroup: IButtonGroup

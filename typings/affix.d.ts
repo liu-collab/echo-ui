@@ -1,6 +1,6 @@
-import { DayUIComponent } from './component'
+import { EchoUIComponent } from './component'
 
-interface IAffix extends DayUIComponent {
+interface IAffix extends EchoUIComponent {
   zIndex: number
   // 在哪个容器内
   target: string

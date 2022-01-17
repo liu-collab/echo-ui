@@ -1,5 +1,6 @@
 import EButton from './button'
 import EIcon from './icon'
+import EAlert from './alert'
 import '../styles/index.scss'
 import { App } from 'vue'
 
@@ -26,4 +27,4 @@ export default {
   install
 }
 
-export { EButton, EIcon }
+export { EButton, EIcon,EAlert }

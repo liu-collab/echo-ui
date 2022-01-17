@@ -1,10 +1,10 @@
-import { ElementUIComponent } from './component'
+import { EchoUIComponent } from './component'
 
 export type AlertType = 'success' | 'warning' | 'info' | 'error'
 
 export type AlertEffect = 'dark' | 'light'
 
-interface IAlert extends ElementUIComponent {
+interface IAlert extends EchoUIComponent {
   title: string
   type: AlertType
   description: string
@@ -15,4 +15,4 @@ interface IAlert extends ElementUIComponent {
   effect: AlertEffect
 }
 
-export const DAlert: IAlert
+export const EAlert: IAlert

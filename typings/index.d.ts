@@ -1,4 +1,4 @@
-export * from './day-ui'
+export * from './echo-ui'
 
-import * as DayUI from './day-ui'
-export default DayUI
+import * as EchoUI from './echo-ui'
+export default EchoUI
