@@ -4,7 +4,7 @@ import EAlert from './alert'
 import '../styles/index.scss'
 import { App } from 'vue'
 
-const components = [EButton, EIcon]
+const components = [EButton, EIcon,EAlert]
 
 const defaultInstallOpt = {
   size: 'medium',
