@@ -1,6 +1,6 @@
 <template>
   <div>
-    <e-alert><e-icon  name="share"></e-icon>dscd</e-alert>
+    <e-alert><e-icon  name="office-building"></e-icon>dscd</e-alert>
   </div>
 </template>
 
