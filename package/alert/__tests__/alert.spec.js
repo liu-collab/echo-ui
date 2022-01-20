@@ -1,16 +1,16 @@
-import DAlert from '../src/index.vue'
+import EAlert from '../src/index.vue'
 import { mount } from '@vue/test-utils'
 
 describe('alert.vue', () => {
   describe('props', () => {
     it('title', () => {
-      const wrapper = mount(DAlert, {
+      const wrapper = mount(EAlert, {
         props: {
           title: 'test title'
         }
       })
 
-      const wrapperSlot = mount(DAlert, {
+      const wrapperSlot = mount(EAlert, {
         slots: {
           title: () => {
             return 'title slot'
@@ -23,75 +23,75 @@ describe('alert.vue', () => {
     })
 
     it('description', () => {
-      const wrapper = mount(DAlert, {
+      const wrapper = mount(EAlert, {
         props: {
           description: 'test description'
         }
       })
-      const wrapperSlot = mount(DAlert, {
+      const wrapperSlot = mount(EAlert, {
         slots: {
           default: () => {
             return 'description slot'
           }
         }
       })
-      expect(wrapper.find('.el-alert__description').text()).toBe(
+      expect(wrapper.find('.e-alert__description').text()).toBe(
         'test description'
       )
-      expect(wrapperSlot.find('.el-alert__description').text()).toBe(
+      expect(wrapperSlot.find('.e-alert__description').text()).toBe(
         'description slot'
       )
     })
 
     it('closable', () => {
-      const wrapperTrue = mount(DAlert, {
+      const wrapperTrue = mount(EAlert, {
         props: {
           closable: true
         }
       })
 
-      const wrapperTrueWithText = mount(DAlert, {
+      const wrapperTrueWithText = mount(EAlert, {
         props: {
           closable: true,
           closeText: '知道了'
         }
       })
-      const wrapperFalse = mount(DAlert, {
+      const wrapperFalse = mount(EAlert, {
         props: {
           closable: false
         }
       })
-      expect(wrapperTrue.find('.el-alert__closebtn').attributes('style')).toBe(
+      expect(wrapperTrue.find('.e-alert__closebtn').attributes('style')).toBe(
         undefined
       )
-      expect(wrapperTrueWithText.find('.el-alert__closebtn').text()).toBe(
+      expect(wrapperTrueWithText.find('.e-alert__closebtn').text()).toBe(
         '知道了'
       )
-      expect(wrapperFalse.find('.el-alert__closebtn').attributes('style')).toBe(
+      expect(wrapperFalse.find('.e-alert__closebtn').attributes('style')).toBe(
         'display: none;'
       )
     })
   })
   it('showIcon', () => {
-    const wrapperTrue = mount(DAlert, {
+    const wrapperTrue = mount(EAlert, {
       props: {
         showIcon: true
       }
     })
-    const wrapperFalse = mount(DAlert, {
+    const wrapperFalse = mount(EAlert, {
       props: {
         showIcon: false
       }
     })
-    expect(wrapperTrue.find('.el-alert__icon').exists()).toBe(true)
-    expect(wrapperFalse.find('.el-alert__icon').exists()).toBe(false)
+    expect(wrapperTrue.find('.e-alert__icon').exists()).toBe(true)
+    expect(wrapperFalse.find('.e-alert__icon').exists()).toBe(false)
   })
 })
 
 describe('event', () => {
   it('close', () => {
-    const wrapper = mount(DAlert)
-    wrapper.find('.el-alert__closebtn').trigger('click')
+    const wrapper = mount(EAlert)
+    wrapper.find('.e-alert__closebtn').trigger('click')
     expect(wrapper.emitted('close')).toBeTruthy()
   })
 })
