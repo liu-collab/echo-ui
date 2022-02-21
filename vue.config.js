@@ -6,14 +6,12 @@ function resolve(dir) {
   return path.resolve(__dirname, dir)
 }
 
-
 function getEntries(path) {
   let files = fs.readdirSync(resolve(path))
   const entries = files.reduce((ret, item) => {
     if (item == 'utils') return ret
     const itemPath = join(path, item)
     const isDir = fs.statSync(itemPath).isDirectory()
-    console.log(isDir);
     if (isDir) {
       ret[item] = resolve(join(itemPath, 'index.ts'))
     } else {
@@ -78,14 +76,14 @@ const buildConfig = {
       filename: 'style/e-[name].css' //在lib文件夹中建立style文件夹中，生成对应的css文件。
     }
   },
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     config.module
       .rule('js')
       .include.add('/package')
       .end()
       .use('babel')
       .loader('babel-loader')
-      .tap(options => {
+      .tap((options) => {
         return options
       })
 
@@ -100,7 +98,7 @@ const buildConfig = {
     config.module
       .rule('fonts')
       .use('url-loader')
-      .tap(option => {
+      .tap((option) => {
         option.fallback.options.name = 'static/fonts/[name].[ext]'
         return option
       })

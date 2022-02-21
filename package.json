@@ -1,6 +1,6 @@
 {
   "name": "echo-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Personal Learning UI library For Vue",
   "main": "lib/echo-ui.umd.min.js",
   "files": [
@@ -10,12 +10,12 @@
     "typings",
     "README.md"
   ],
-  "private": true,
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "test:counter":"vue-cli-service test:unit counter",
+    "test:counter": "vue-cli-service test:unit counter",
     "lint": "vue-cli-service lint",
     "commit": "cz",
     "lib": "vue-cli-service build --target lib package/index.js && vue-cli-service build --no-clean"
@@ -55,7 +55,7 @@
   "typings": "typings/index.d.ts",
   "style": "lib/day-ui.css",
   "repository": {
-    "url": ""
+    "url": "https://github.com/liu-collab/echo-ui.git/"
   },
   "keywords": [
     "UI",
