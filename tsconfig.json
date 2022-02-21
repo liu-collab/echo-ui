@@ -16,10 +16,10 @@
     "types": ["webpack-env", "jest"],
     "paths": {
       "@/*": ["src/*"],
-      "echo-ui": ["packages/"]
+      "echo-ui": ["package/"]
     },
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
-  "include": ["package/index.ts", "app.d.ts"],
+  "include": ["package/index.js", "app.d.ts"],
   "exclude": ["node_modules"]
 }

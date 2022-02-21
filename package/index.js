@@ -2,7 +2,7 @@ import EButton from './button'
 import EIcon from './icon'
 import EAlert from './alert'
 import '../styles/index.scss'
-import { App } from 'vue'
+//import { App } from 'vue'
 
 const components = [EButton, EIcon,EAlert]
 
@@ -10,7 +10,7 @@ const defaultInstallOpt = {
   size: 'medium',
   zIndex: 2000
 }
-const install = (app: App, options = {}) => {
+const install = (app, options = {}) => {
   components.forEach((item) => {
     app.component(item.name, item)
   })
