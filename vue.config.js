@@ -10,6 +10,7 @@ function getEntries(path) {
   let files = fs.readdirSync(resolve(path))
   const entries = files.reduce((ret, item) => {
     if (item == 'utils') return ret
+    if (item === 'shims-vue.d.ts') return ret
     const itemPath = join(path, item)
     const isDir = fs.statSync(itemPath).isDirectory()
     if (isDir) {
