@@ -4,6 +4,7 @@
     <Ebutton></Ebutton>
     <EIcon></EIcon>
     <EAlert></EAlert>
+    <EButtonGroup></EButtonGroup>
   </div>
 </template>
 
@@ -12,11 +13,13 @@ import { defineComponent } from 'vue'
 import Ebutton from './example/button.vue'
 import  EIcon  from './example/icon.vue'
 import EAlert from './example/alert.vue'
+import EButtonGroup from "./example/button-group.vue"
 export default defineComponent({
   components:{
     Ebutton,
     EIcon,
-    EAlert
+    EAlert,
+    EButtonGroup
   },
   setup () {
 
