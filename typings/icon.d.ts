@@ -1,6 +1,6 @@
 import { EchoUIComponent } from './component'
 
-export const DIcon: IIcon
+export const EIcon: IIcon
 /** Icon Component */
 interface IIcon extends EchoUIComponent {
   /** Icon name */

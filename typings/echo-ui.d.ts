@@ -7,8 +7,8 @@ import {
 
 export { EButton } from './button'
 export { EButtonGroup } from './button-group'
-export { DIcon } from './icon'
-export { DAffix } from './affix'
+export { EIcon } from './icon'
+export { EAffix } from './affix'
 
 export interface InstallationOptions {
   locale: any

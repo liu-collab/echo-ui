@@ -2,10 +2,11 @@ import EButton from './button'
 import EIcon from './icon'
 import EAlert from './alert'
 import EButtonGroup from './button-group'
+import EAffix from './affix'
 import '../styles/index.scss'
 //import { App } from 'vue'
 
-const components = [EButton, EIcon,EAlert,EButtonGroup]
+const components = [EButton, EIcon,EAlert,EButtonGroup,EAffix]
 
 const defaultInstallOpt = {
   size: 'medium',
@@ -28,4 +29,4 @@ export default {
   install
 }
 
-export { EButton, EIcon,EAlert,EButtonGroup }
+export { EButton, EIcon,EAlert,EButtonGroup ,EAffix}
